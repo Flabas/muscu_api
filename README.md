@@ -14,6 +14,7 @@ API RESTful pour gérer des utilisateurs, des programmes d’entraînement, des 
 - [📋 Exercices d’une séance](#-exercices-dune-séance)
 - [🔁 Séries pour un exercice](#-séries-pour-un-exercice)
 - [🔷 Notes](#-notes)
+- [📚 Documentation Swagger](#-documentation-swagger)
 
 ---
 
@@ -93,6 +94,14 @@ API RESTful pour gérer des utilisateurs, des programmes d’entraînement, des 
 | POST    | `/session-exercises/:sessionExerciseId/sets`        | Ajouter une série             |
 | PATCH   | `/sets/:id`                                          | Modifier une série            |
 | DELETE  | `/sets/:id`                                          | Supprimer une série           |
+
+---
+
+## 📚 Documentation Swagger
+
+La documentation interactive de l’API est disponible via Swagger à l’URL suivante :
+
+- [`/api-docs`](http://localhost:3000/api-docs)
 
 ---
 
