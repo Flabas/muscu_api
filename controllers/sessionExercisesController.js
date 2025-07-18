@@ -2,15 +2,19 @@ const supabase = require('../utils/supabase');
 
 exports.updateSessionExercise = async (req, res) => {
     const { id } = req.params;
-    const { order } = req.body;
+    const { order, exercise_id } = req.body;
 
-    if (order === undefined) {
-        return res.status(400).json({ error: 'Le champ "order" est requis' });
+    if (order === undefined && exercise_id === undefined) {
+        return res.status(400).json({ error: 'Au moins un des champs "order" ou "exercise_id" est requis' });
     }
+
+    const updateObj = {};
+    if (order !== undefined) updateObj.order = order;
+    if (exercise_id !== undefined) updateObj.exercise_id = exercise_id;
 
     const { data, error } = await supabase
         .from('session_exercises')
-        .update({ order })
+        .update(updateObj)
         .eq('id', id)
         .select('*')
         .single();

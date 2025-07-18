@@ -29,9 +29,19 @@ const {
  *           schema:
  *             type: object
  *             properties:
+ *               order:
+ *                 type: integer
+ *                 example: 1
+ *                 description: Ordre de l'exercice dans la session
+ *               exercise_id:
+ *                 type: string
+ *                 example: "123e4567-e89b-12d3-a456-426614174000"
+ *                 description: ID du nouvel exercice associé
  *               notes:
  *                 type: string
  *                 example: "Notes sur l'exercice"
+ *                 description: Notes facultatives
+ *             description: Au moins un des champs "order" ou "exercise_id" doit être fourni.
  *     responses:
  *       200:
  *         description: Exercice de session mis à jour
